@@ -7,7 +7,7 @@
     "watch": "node-sass -w style -o public/style",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "docker build --tag=vide-grenier .",
-    "start": "docker-compose up --build",
+    "start": "npm run build && docker-compose up -d",
     "dev": "concurrently --kill-others-on-fail \"npm run watch\" \"apache2-foreground\""
   },
   "author": "",
