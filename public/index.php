@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Front controller
  *
@@ -43,7 +42,7 @@ $router->add('{controller}/{action}');
 try {
     $router->dispatch($_SERVER['QUERY_STRING']);
 } catch (Exception $e) {
-    switch ($e->getMessage()) {
+    switch($e->getMessage()){
         case 'You must be logged in':
             header('Location: /login');
             break;

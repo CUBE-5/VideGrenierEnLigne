@@ -20,17 +20,20 @@ services:
       - db
     environment:
       MYSQL_HOST: db
-      MYSQL_USER: root
+      MYSQL_USER: webapplication
       MYSQL_DB: videgrenierenligne
+      MYSQL_PASSWORD: 653rag9T
 
   db:
     image: mysql:8.0.3
     container_name: db
     environment:
       MYSQL_DATABASE: videgrenierenligne
-      MYSQL_USER: root
+      MYSQL_USER: webapplication
       MYSQL_DB: videgrenierenligne
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_PASSWORD: 653rag9T
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+    restart: always
     ports:
       - "3306:3306"
     volumes:
