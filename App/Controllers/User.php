@@ -6,6 +6,7 @@ use App\Config;
 use App\Model\UserRegister;
 use App\Models\Articles;
 use App\Utility\Hash;
+use App\Utility\Cookie;
 use App\Utility\Session;
 use \Core\View;
 use Exception;
@@ -156,6 +157,30 @@ class User extends \Core\Controller
         header ("Location: /");
 
         return true;
+    }
+
+     /**
+     * Create Remember Cookie: Inserts a remember-me hash into database and
+     * cookie.
+     * @access public
+     * @param string $userID
+     * @return boolean
+     * @since 1.0.3
+     */
+    public static function createRememberCookie($userID) {
+        $Db = static::getDB();
+        $check = $Db->select("user_cookies", ["user_id", "=", $userID]);
+        if ($check->count()) {
+            $hash = $check->first()->hash;
+        } else {
+            $hash = Hash::generateUnique();
+            if (!$Db->insert("user_cookies", ["user_id" => $userID, "hash" => $hash])) {
+                return false;
+            }
+        }
+        $cookie = Config::COOKIE_DEFAULT_EXPIRY;
+        $expiry = Config::COOKIE_USER;
+        return Cookie::put($cookie, $hash, $expiry);
     }
 
 }
