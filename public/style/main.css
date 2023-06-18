@@ -1,7 +1,17 @@
 /*
 * General Styles
 */
+img {
+  max-width: 100%;
+  height: auto;
+  
+  float:left;
+  width:100%;
+    margin:-100% 0;
+    vertical-align:middle;
+}
 body {
+
   color: #2e2e2e;
   font-family: "Hind Guntur", sans-serif;
   font-size: 16px;
@@ -1082,8 +1092,6 @@ video {
       .single-v-footer-switch > a.active span, .single-v-footer-switch > a.active i::before {
         color: #ea2c5a; }
 
-.cb-content {
-  width: 130% !important; }
 
 /*
 * Content Index END
