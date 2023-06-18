@@ -794,12 +794,16 @@ video {
 .b-article .v-desc {
   color: #343434;
   font-weight: 500;
-  padding-top: 25px; }
-
+  padding-top: 25px; 
+  text-align: center;}
+.v-def {
+  text-align: center;
+}
 .b-article .v-views {
   font-size: 15px;
   color: #7e7e7e;
-  padding-top: 5px; }
+  padding-top: 5px;
+text-align: center; }
   @media only screen and (min-width: 768px) {
     .b-article .v-views {
       padding-bottom: 30px; } }
