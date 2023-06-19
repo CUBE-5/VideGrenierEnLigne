@@ -9,6 +9,14 @@ namespace App;
  */
 class Config
 {
+
+    // 
+    // Cookie Config
+    // =========================================================================
+    const COOKIE_DEFAULT_EXPIRY = 604800;
+    const COOKIE_USER = "user";
+
+
     // 
     // Core Config
     // =========================================================================
@@ -41,13 +49,6 @@ class Config
      * @var string
      */
     const DB_PASSWORD = '653rag9T';
-
-    // 
-    // Cookie Config
-    // =========================================================================
-    const COOKIE_DEFAULT_EXPIRY = 604800; // 1 week
-    const COOKIE_USER = "user"; // Name of cookie for logged in user
-
 
     /**
      * Show or hide error messages on screen
