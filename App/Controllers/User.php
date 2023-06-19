@@ -53,7 +53,10 @@ class User extends \Core\Controller
             // validation
 
             $this->register($f);
-            // TODO: Rappeler la fonction de login pour connecter l'utilisateur
+            $this->login($f);
+
+            // Si login OK, redirige vers le compte
+            header('Location: /account');
         }
 
         View::renderTemplate('User/register.html');
@@ -107,13 +110,10 @@ class User extends \Core\Controller
             if (Hash::generate($data['password'], $user['salt']) !== $user['password']) {
                 return false;
             }
-            // TODO: Create a remember me cookie if the user has selected the option
-            // to remained logged in on the login form.
-            // https://github.com/andrewdyer/php-mvc-register-login/blob/development/www/app/Model/UserLogin.php#L86
             
             if (isset($data['remember'])) {
                 $hash = Hash::generate( $user["id"], $user['salt']);
-                Cookie::put(Config::COOKIE_USER, $hash, Config::COOKIE_DEFAULT_EXPIRY);              
+                Cookie::put(Config::COOKIE_USER, $hash, Config::COOKIE_DEFAULT_EXPIRY);
             }
 
             $_SESSION['user'] = array(
@@ -148,9 +148,14 @@ class User extends \Core\Controller
         $_SESSION = array();
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000,
-                $params["path"], $params["domain"],
-                $params["secure"], $params["httponly"]
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params["path"],
+                $params["domain"],
+                $params["secure"],
+                $params["httponly"]
             );
         }
 
