@@ -6,6 +6,7 @@ use App\Config;
 use App\Model\UserRegister;
 use App\Models\Articles;
 use App\Utility\Hash;
+use App\Utility\Cookie;
 use App\Utility\Session;
 use \Core\View;
 use Exception;
@@ -106,10 +107,14 @@ class User extends \Core\Controller
             if (Hash::generate($data['password'], $user['salt']) !== $user['password']) {
                 return false;
             }
-
             // TODO: Create a remember me cookie if the user has selected the option
             // to remained logged in on the login form.
             // https://github.com/andrewdyer/php-mvc-register-login/blob/development/www/app/Model/UserLogin.php#L86
+            
+            if (isset($data['remember'])) {
+                $hash = Hash::generate( $user["id"], $user['salt']);
+                Cookie::put(Config::COOKIE_USER, $hash, Config::COOKIE_DEFAULT_EXPIRY);              
+            }
 
             $_SESSION['user'] = array(
                 'id' => $user['id'],
@@ -134,15 +139,13 @@ class User extends \Core\Controller
      */
     public function logoutAction() {
 
-        /*
-        if (isset($_COOKIE[$cookie])){
-            // TODO: Delete the users remember me cookie if one has been stored.
-            // https://github.com/andrewdyer/php-mvc-register-login/blob/development/www/app/Model/UserLogin.php#L148
-        }*/
+        // Delete the cookie if it exists.
+        if (Cookie::exists(Config::COOKIE_USER)){
+            Cookie::delete(Config::COOKIE_USER);
+        }
+
         // Destroy all data registered to the session.
-
         $_SESSION = array();
-
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -157,5 +160,4 @@ class User extends \Core\Controller
 
         return true;
     }
-
 }

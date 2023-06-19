@@ -10,6 +10,16 @@ namespace App;
 class Config
 {
 
+    // 
+    // Cookie Config
+    // =========================================================================
+    const COOKIE_DEFAULT_EXPIRY = 604800;
+    const COOKIE_USER = "user";
+
+
+    // 
+    // Core Config
+    // =========================================================================
     /**
      * Database host
      * @var string
