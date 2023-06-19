@@ -74,12 +74,14 @@
       color: $c-caption;
       font-weight: 500;
       //padding-top: $space-sms;
+      text-align: center;
     }
     .v-views {
       font-size: $fs-defs;
       color: $c-light;
       padding-bottom: 5px;
       padding-top: 5px;
+      text-align: center;
     }
     .v-percent {
       color: $c-green-v;
