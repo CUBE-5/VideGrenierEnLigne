@@ -1,9 +1,7 @@
 /*
 * General Styles
 */
-
 body {
-
   color: #2e2e2e;
   font-family: "Hind Guntur", sans-serif;
   font-size: 16px;
@@ -139,6 +137,9 @@ a.active {
 
 .head-div {
   border-top: solid 1px #eceff0; }
+
+.v-def {
+  text-align: center; }
 
 .btn-cv1 {
   border-radius: 3px;
@@ -794,16 +795,13 @@ video {
 .b-article .v-desc {
   color: #343434;
   font-weight: 500;
-  padding-top: 25px; 
-  text-align: center;}
-.v-def {
-  text-align: center;
-}
+  padding-top: 25px;
+  text-align: center; }
+
 .b-article .v-views {
   font-size: 15px;
   color: #7e7e7e;
-  padding-top: 5px;
-text-align: center; }
+  padding-top: 5px; }
   @media only screen and (min-width: 768px) {
     .b-article .v-views {
       padding-bottom: 30px; } }
@@ -1088,7 +1086,9 @@ text-align: center; }
       .single-v-footer-switch > a.active span, .single-v-footer-switch > a.active i::before {
         color: #ea2c5a; }
 
-
+/*.cb-content {
+    width: 130% !important; // FIX INTERNET EXPLORER ;
+}*/
 /*
 * Content Index END
 */
@@ -1847,7 +1847,8 @@ footer {
     font-size: 15px;
     color: #7e7e7e;
     padding-bottom: 5px;
-    padding-top: 5px; }
+    padding-top: 5px;
+    text-align: center; }
   .single-article .h-article .v-percent {
     color: #28b47e;
     display: inline-block;
