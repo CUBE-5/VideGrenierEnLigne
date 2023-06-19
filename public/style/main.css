@@ -138,9 +138,6 @@ a.active {
 .head-div {
   border-top: solid 1px #eceff0; }
 
-.v-def {
-  text-align: center; }
-
 .btn-cv1 {
   border-radius: 3px;
   border: solid 1px #ea2c5a;
@@ -795,8 +792,7 @@ video {
 .b-article .v-desc {
   color: #343434;
   font-weight: 500;
-  padding-top: 25px;
-  text-align: center; }
+  padding-top: 25px; }
 
 .b-article .v-views {
   font-size: 15px;
@@ -1086,9 +1082,9 @@ video {
       .single-v-footer-switch > a.active span, .single-v-footer-switch > a.active i::before {
         color: #ea2c5a; }
 
-/*.cb-content {
-    width: 130% !important; // FIX INTERNET EXPLORER ;
-}*/
+.cb-content {
+  width: 130% !important; }
+
 /*
 * Content Index END
 */
@@ -1841,14 +1837,12 @@ footer {
       font-weight: 500; }
   .single-article .h-article .v-desc {
     color: #343434;
-    font-weight: 500;
-    text-align: center; }
+    font-weight: 500; }
   .single-article .h-article .v-views {
     font-size: 15px;
     color: #7e7e7e;
     padding-bottom: 5px;
-    padding-top: 5px;
-    text-align: center; }
+    padding-top: 5px; }
   .single-article .h-article .v-percent {
     color: #28b47e;
     display: inline-block;
