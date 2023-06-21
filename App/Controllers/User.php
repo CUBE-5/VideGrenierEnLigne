@@ -5,9 +5,9 @@ namespace App\Controllers;
 use App\Config;
 use App\Model\UserRegister;
 use App\Models\Articles;
-use App\Utility\Hash;
-use App\Utility\Cookie;
-use App\Utility\Session;
+use App\Helpers\Hash;
+use App\Helpers\Cookie;
+use App\Helpers\Session;
 use \Core\View;
 use Exception;
 use http\Env\Request;
@@ -95,7 +95,7 @@ class User extends \Core\Controller
 
         } catch (Exception $ex) {
             // TODO : Set flash if error : utiliser la fonction en dessous
-            /* Utility\Flash::danger($ex->getMessage());*/
+            /* Helpers\Flash::danger($ex->getMessage());*/
         }
     }
 
@@ -125,7 +125,7 @@ class User extends \Core\Controller
 
         } catch (Exception $ex) {
             // TODO : Set flash if error
-            /* Utility\Flash::danger($ex->getMessage());*/
+            /* Helpers\Flash::danger($ex->getMessage());*/
         }
     }
 
