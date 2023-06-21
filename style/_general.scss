@@ -65,7 +65,9 @@ $space-xs: 15px;
 /*
 * General Styles
 */
-
+#ou {
+  text-align: center;
+}
 body {
   color: $c-default;
   font-family: $ff-def;

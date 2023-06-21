@@ -207,6 +207,7 @@
     font-size: $fs-defs;
     color: $c-light;
     padding-top: 5px;
+    text-align: center;
     @media only screen and(min-width: 768px) {
       padding-bottom: 30px;
     }
@@ -342,6 +343,7 @@
     color: $c-light;
     padding-bottom: 0px;
     padding-top: 5px;
+    text-align: center;
     .v-percent {
       color: $c-green-v;
       display: inline-block;
@@ -467,6 +469,7 @@
       .v-views {
         @media only screen and(min-width: 768px) {
           padding-bottom: 30px;
+          
         }
       }
       .last-row {
