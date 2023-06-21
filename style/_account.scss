@@ -2,6 +2,10 @@
 * Content Account
 */
 
+
+#ou {
+  text-align: center;
+}
 .bg-image {
   text-align: center;
   img {
@@ -12,7 +16,7 @@
 .login-wraper{
   position: relative;
   .login-window {
-    position: absolute;
+    
     width: 570px;
     top: 50%;
     left: 50%;
@@ -125,7 +129,7 @@
   }
 }
 
-@media (min-width: 100px) and (max-width: 1365px) {
+
   .banner-text {
     position: relative;
     top: 0;
@@ -151,13 +155,17 @@
   }
 
   .login-wraper {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     .login-window {
-      position: relative;
-      width: auto;
-      top: 0;
-      left: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       margin-left:0;
       margin-top: 0;
+      top: 0;
+      left: 0;
       .l-head{
         padding: 20px 10px;
       }
@@ -173,7 +181,7 @@
   }
 
 
-}
+
 /*
 * Content Account END
 */
