@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utility;
+namespace App\Helpers;
 
 /**
  * Hash:
@@ -11,7 +11,7 @@ class Hash {
      * Génère et retourne un hash
      */
     public static function generate($string, $salt = "") {
-        return(hash("sha256", $string . $salt));
+        return hash("sha256", $string . $salt);
     }
 
     /**
@@ -30,7 +30,7 @@ class Hash {
      * Génère et retourne un UID
      */
     public static function generateUnique() {
-        return(self::generate(uniqid()));
+        return self::generate(uniqid());
     }
 
 }

@@ -80,6 +80,8 @@
       color: $c-light;
       padding-bottom: 5px;
       padding-top: 5px;
+      text-align: center;
+      
     }
     .v-percent {
       color: $c-green-v;
@@ -246,6 +248,7 @@
     .sv-views {
       float: right;
       width: 200px;
+      text-align: center;
       .sv-views-count {
         font-size: $fs-md;
         text-align: right;

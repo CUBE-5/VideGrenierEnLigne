@@ -1,6 +1,6 @@
-vendor
 .idea
-composer.lock
 .env
+composer.lock
+vendor
 node_modules
 public/storage
