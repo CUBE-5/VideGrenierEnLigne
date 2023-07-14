@@ -6,8 +6,7 @@
   "scripts": {
     "watch": "node-sass -w style -o public/style",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "docker build --tag=vid-grenier .",
-    "start": "bash envBuild.sh",
+    "start": "echo \"Next, execute : bash envBuild.sh\" && wsl.exe",
     "dev": "concurrently --kill-others-on-fail \"npm run watch\" \"apache2-foreground\""
   },
   "author": "",

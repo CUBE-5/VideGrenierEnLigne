@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script is used to build the environment for the project
-# It will check the version
+# It will check the branch and build the environment accordingly
 
 gitBranchCheck() {
     branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
