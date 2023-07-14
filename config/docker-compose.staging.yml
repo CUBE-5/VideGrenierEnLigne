@@ -8,8 +8,6 @@ services:
     restart: always
     ports:
       - "${APP_PORT}"
-    volumes:
-      - ./config/.env.staging:/var/www/html/.env
     environment:
       MYSQL_HOST: ${DB_HOST}
       MYSQL_USER: ${DB_USER}

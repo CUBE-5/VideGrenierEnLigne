@@ -1,5 +1,7 @@
 FROM php:apache
 
+ARG envi
+
 RUN docker-php-ext-install pdo pdo_mysql
 RUN apt-get update && apt-get install -y \
     libzip-dev \
@@ -22,20 +24,26 @@ WORKDIR /var/www/html
 # Copy the rest of the application files
 COPY . .
 
+RUN /bin/bash -c 'if [ "$envi" == "prod" ]; then \
+    cp ./config/.env.prod .env && \
+    cp ./public/.htaccess .htaccess; \
+    elif [ "$envi" == "staging" ]; then \
+    cp ./config/.env.staging .env && \
+    cp ./public/.htaccess .htaccess; \
+fi'
+
+# Actions needed for production environments
+RUN /bin/bash -c 'if [ "$envi" == "prod" ] || [ "$envi" == "staging" ]; then \
+    rm -r ./sql && \
+    rm -r ./config && \
+    rm -r ./envBuild.sh; \
+fi'
+
 # Install Composer & dependencies for backend
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY composer.json ./
-COPY composer.lock ./
-RUN composer install    
-
-# Actions needed for production environments
-RUN if [ "$isDev" != undefined && "$isDev" = "false" ]; then \
-    rm docker-compose.yml && \
-    rm Dockerfile && \
-    rm -r /sql && \
-    rm -r /config; \
-  fi
+RUN composer install
 
 # Enable Apache modules and start the server
 RUN a2enmod rewrite
