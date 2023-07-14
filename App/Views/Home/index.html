@@ -60,10 +60,12 @@
 <script type="text/javascript">
   function getProductsAndRender(option = "") {
     $.ajax({
-      url: "/api/products" + "?sort=" + option,
+      url: "/api/product" + "?sort=" + option,
     }).done(function (result) {
+      console.log("SALUT", result);
       $("#articlelist").empty();
       for (let i = 0; i < result.length; i++) {
+        console.log("LOL", result[i]);
         renderProduct(result[i]);
       }
     });
@@ -88,7 +90,7 @@
         $product.name +
         "</a>" +
         "   </div>" +
-        ' <p class="v-def"> '+
+        "   <p>" +
         $product.description.slice(0, 20) +
         "...</p>" +
         '   <div class="v-views">' +
