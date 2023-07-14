@@ -2,11 +2,8 @@ version: "3"
 
 services:
   app:
-    working_dir: /var/www/html
-    volumes:
+    volumes: 
       - ./vendor:/var/www/html/vendor
-      - ./public:/var/www/html/public
-      - ./public/.htaccess:/var/www/html/.htaccess
     depends_on:
       - db
 

@@ -14,6 +14,9 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./:/var/www/html
+      - ./vendor:/var/www/html/vendor
+      - ./public:/var/www/html/public
+      - ./public/.htaccess:/var/www/html/.htaccess
 
 
   db:
