@@ -3,7 +3,7 @@
 namespace Core;
 
 use PDO;
-use App\Config;
+use App\Helpers\Config;
 use PDOException;
 
 /**
@@ -25,11 +25,11 @@ abstract class Model
 
         if ($db === null) {
             try {
-                $dsn = 'mysql:host=' . Config::DB_HOST .
-                    ';port=' . Config::DB_PORT .
-                    ';dbname=' . Config::DB_NAME .
+                $dsn = 'mysql:host=' . Config::get("DB_HOST") .
+                    ';port=' . Config::get("DB_PORT") .
+                    ';dbname=' . Config::get("DB_NAME") .
                     ';charset=utf8';
-                $db = new PDO($dsn, Config::DB_USER, Config::DB_PASSWORD);
+                $db = new PDO($dsn, Config::get("DB_USER"), Config::get("DB_PASSWORD"));
 
                 // Throw an Exception when an error occurs
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

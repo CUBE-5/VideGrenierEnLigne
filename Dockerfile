@@ -19,6 +19,9 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
 WORKDIR /var/www/html
 
+# Copy the rest of the application files
+COPY . .
+
 # Install Composer & dependencies for backend
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
@@ -26,8 +29,13 @@ COPY composer.json ./
 COPY composer.lock ./
 RUN composer install    
 
-# Copy the rest of the application files
-COPY . .
+# Actions needed for production environments
+RUN if [ "$isDev" != undefined && "$isDev" = "false" ]; then \
+    rm docker-compose.yml && \
+    rm Dockerfile && \
+    rm -r /sql && \
+    rm -r /config; \
+  fi
 
 # Enable Apache modules and start the server
 RUN a2enmod rewrite
