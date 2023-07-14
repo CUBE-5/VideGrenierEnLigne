@@ -10,5 +10,9 @@
             "Core\\": "Core/",
             "App\\": "App/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.2",
+        "symfony/phpunit-bridge": "^6.3"
     }
 }
