@@ -5,7 +5,7 @@
 
 gitBranchCheck() {
     branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
-    if [[ $branch == VID-ENV-EM ]];
+    if [[ $branch == main ]];
         then 
         echo "Env is production"
         docker compose --env-file ./config/.env.prod -f docker-compose.yml -f ./config/docker-compose.prod.yml down
