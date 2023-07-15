@@ -200,6 +200,7 @@
     color: $c-caption;
     font-weight: 500;
     padding-top: $space-sms;
+    text-align: center;
   }
 
   .v-views {
@@ -570,9 +571,9 @@
   }
 }
 
-.cb-content {
+/*.cb-content {
     width: 130% !important; // FIX INTERNET EXPLORER ;
-}
+}*/
 
 /*
 * Content Index END
