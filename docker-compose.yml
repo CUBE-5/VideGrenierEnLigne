@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    volumes: 
+    volumes:
       - ./vendor:/var/www/html/vendor
     depends_on:
       - db
