@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Config;
+use App\Helpers\Config;
 use App\Model\UserRegister;
 use App\Models\Articles;
 use App\Helpers\Hash;
@@ -113,7 +113,7 @@ class User extends \Core\Controller
             
             if (isset($data['remember'])) {
                 $hash = Hash::generate( $user["id"], $user['salt']);
-                Cookie::put(Config::COOKIE_USER, $hash, Config::COOKIE_DEFAULT_EXPIRY);
+                Cookie::put(Config::get("COOKIE_USER"), $hash, Config::get("COOKIE_DEFAULT_EXPIRY"));
             }
 
             $_SESSION['user'] = array(
@@ -140,8 +140,8 @@ class User extends \Core\Controller
     public function logoutAction() {
 
         // Delete the cookie if it exists.
-        if (Cookie::exists(Config::COOKIE_USER)){
-            Cookie::delete(Config::COOKIE_USER);
+        if (Cookie::exists(Config::get("COOKIE_USER"))){
+            Cookie::delete(Config::get("COOKIE_USER"));
         }
 
         // Destroy all data registered to the session.
