@@ -62,11 +62,9 @@
     $.ajax({
       url: "/api/product" + "?sort=" + option,
     }).done(function (result) {
-      console.log("SALUT", result);
       $("#articlelist").empty();
-      for (let i = 0; i < result.length; i++) {
-        console.log("LOL", result[i]);
-        renderProduct(result[i]);
+      for (const element of result) {
+        renderProduct(element);
       }
     });
   }

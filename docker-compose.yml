@@ -4,6 +4,7 @@ services:
   app:
     volumes: 
       - ./vendor:/var/www/html/vendor
+      - ./public/.htaccess:/var/www/html/.htaccess
     depends_on:
       - db
 
