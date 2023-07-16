@@ -9,7 +9,7 @@ use \App\Helpers\DotEnv;
  * PHP version 7.0
  */
 
-(new DotEnv('/var/www/html/.env'))->load();
+(new DotEnv(ROOT . '.env'))->load();
 return
 [
     //
