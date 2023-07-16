@@ -2,7 +2,6 @@
 * Content Single Video
 */
 .single-article {
-
   .h-clear {
     text-align: right;
     i {
@@ -68,7 +67,6 @@
         line-height: 14px;
         font-weight: 500;
       }
-
     }
     .v-desc {
       color: $c-caption;
@@ -82,7 +80,6 @@
       padding-bottom: 5px;
       padding-top: 5px;
       text-align: center;
-      
     }
     .v-percent {
       color: $c-green-v;
@@ -103,7 +100,6 @@
     &.last-row {
       padding-bottom: 0px;
     }
-
   }
 
   .content-wrapper {
@@ -202,11 +198,11 @@
     background-color: $c-white;
     //border: solid 1px $c-divider;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 2px 1px 1px rgba(214,215,216,1);
-    -moz-box-shadow: 0px 2px 1px 1px rgba(214,215,216,1);
-    box-shadow: 0px 2px 1px 1px rgba(214,215,216,1);
+    -webkit-box-shadow: 0px 2px 1px 1px rgba(214, 215, 216, 1);
+    -moz-box-shadow: 0px 2px 1px 1px rgba(214, 215, 216, 1);
+    box-shadow: 0px 2px 1px 1px rgba(214, 215, 216, 1);
     .sv-avatar {
-      width:72px;
+      width: 72px;
       float: left;
     }
     .sv-name {
@@ -221,7 +217,7 @@
           color: $c-active;
         }
       }
-      .c-sub{
+      .c-sub {
         padding-top: 13px;
         float: left;
         .c-f {
@@ -327,7 +323,6 @@
       p {
         display: inline-block;
       }
-
     }
   }
 
@@ -384,7 +379,7 @@
   .reply-comment {
     font-size: $fs-deff;
     margin-bottom: 25px;
-    i{
+    i {
       font-size: $fs-md;
     }
     .semibold {
@@ -393,7 +388,6 @@
     }
     .rc-header {
       margin-bottom: 25px;
-
     }
     textarea {
       width: 100%;
@@ -409,7 +403,7 @@
       width: 70px;
       margin-right: 30px;
     }
-    .rc-comment{
+    .rc-comment {
       float: left;
       position: relative;
       width: 670px;
@@ -424,7 +418,6 @@
       }
     }
   }
-
 
   .cl-comment {
     margin-bottom: 45px;
@@ -502,7 +495,7 @@
     }
   }
 
-  .cl-replies{
+  .cl-replies {
     color: $c-light;
     padding-top: 6px;
     a {
@@ -520,7 +513,7 @@
     position: relative;
     .cl-flag {
       position: absolute;
-      top:0;
+      top: 0;
       right: 0;
       font-size: $fs-md;
     }
@@ -552,7 +545,7 @@
       width: 100%;
     }
   }
-  .single-article{
+  .single-article {
     .adblock2 {
       .img {
         width: 100%;
@@ -568,8 +561,8 @@
         width: 100%;
       }
     }
-    .author{
-      &>a {
+    .author {
+      & > a {
         width: 100%;
         text-align: center;
         padding-bottom: 15px;
@@ -621,7 +614,6 @@
         width: 65%;
       }
     }
-
   }
 
   .b-article {
@@ -644,10 +636,8 @@
   }
 
   .cl-comment {
-
   }
 }
-
 
 @media (min-width: 768px) and (max-width: 1365px) {
   .sv-video {
@@ -656,8 +646,8 @@
     }
   }
 
-  .similar-videos{
-    .articleitem{
+  .similar-videos {
+    .articleitem {
       margin-bottom: 30px;
       img {
         width: 100%;
@@ -666,7 +656,7 @@
   }
   .single-article {
     .reply-comment {
-      .rc-comment{
+      .rc-comment {
         width: 600px;
       }
     }
@@ -681,9 +671,7 @@
       }
     }
   }
-
 }
-
 
 /*
 * Content Single Video END

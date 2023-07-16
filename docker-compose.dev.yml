@@ -17,7 +17,6 @@ services:
       - ./public:/var/www/html/public
       - ./public/.htaccess:/var/www/html/.htaccess
 
-
   db:
     container_name: ${DB_CONTAINER_NAME}
     environment:

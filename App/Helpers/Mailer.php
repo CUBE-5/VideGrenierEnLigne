@@ -46,7 +46,7 @@ class Mailer {
      */
     public static function sendMail($emailTo, $senderName, $senderEmail, $subject, $message, $attachment = null) {
         //Create an instance; passing `true` enables exceptions
-        (new DotEnv('/var/www/html/.env'))->load();
+        (new DotEnv(ROOT . '.env'))->load();
 
         try {
             $mail = Mailer::smtpSetup(false);
