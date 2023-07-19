@@ -52,7 +52,7 @@ label {
   color: #2e2e2e; }
 
 .color-active {
-  color: #ea2c5a; }
+  color: red; }
 
 .padding-def {
   padding: 70px 0; }
@@ -381,12 +381,12 @@ label.checkbox-text {
     left: 0px; }
 
 ul.list-inline li a:not(.color-active) {
-  color: #7e7e7e; }
+  color: red; }
   ul.list-inline li a:not(.color-active):hover {
-    color: #2e2e2e; }
+    color: red; }
 
 ul.list-inline li a.color-active {
-  color: #ea2c5a; }
+  color: red; }
 
 .social {
   overflow: hidden; }
